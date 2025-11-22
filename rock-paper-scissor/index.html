@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count=0;
+        let computerScore=0;
+        let humanScore=0;
+        let tieScore=0;
+        while(count<5){
+            let humanChoice=0;
+        function getHumanChoice(){
+            humanChoice=prompt("Rock/Paper/Scissor?");  
+        }
+
+        let computerChoice=0;
+        function getComputerChoice(){
+            let total=(Math.random())*10;
+            if(total<=(10/3)){
+                computerChoice= 'Rock';
+            }
+            else if(total>(10/3) && total<=(10-(10/3))){
+                computerChoice= 'Paper';
+            }
+            else{
+                computerChoice='Scissor';
+            }
+        }
+        
+    
+        
+
+        getComputerChoice();
+        getHumanChoice();
+
+        humanChoice= humanChoice.toUpperCase();
+        computerChoice=computerChoice.toUpperCase();
+
+        console.log(`You chose ${humanChoice} and Computer chose ${computerChoice}`);
+
+        if((humanChoice==='ROCK'&& computerChoice==='PAPER') ||
+        (humanChoice==='PAPER' && computerChoice==='SCISSOR')||
+        (humanChoice==='SCISSOR' && computerChoice==='ROCK')){
+                console.log('Computer Wins');
+                computerScore++;
+
+        }
+        else if(humanChoice===computerChoice){
+            console.log('Tie');
+            tieScore++;
+        }
+        else{
+            console.log('You Win');
+            humanScore++;
+        }
+
+        count++;
+
+
+        }
+
+        console.log(`Game Over. Your Score ${humanScore}  . Computer Score ${computerScore}. TIE ${tieScore} `);
+            
+
+
+
+        // console.log(Math.random()*10)r
+        
+    </script>
+</body>
+</html>
